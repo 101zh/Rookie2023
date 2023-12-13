@@ -23,5 +23,8 @@ public final class Constants {
 
   public static final class ManipulatorConstants {
     public static final int kIndexerPort = 9;
+    public static final int kIntakeMotorPort = 8;
+
+    public static final double kMaxIntakePower = 1;
   }
 }
