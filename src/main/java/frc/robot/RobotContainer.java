@@ -8,8 +8,10 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.IndexerXboxController;
+import frc.robot.commands.IntakeXboxController;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Indexer;
+import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -30,6 +32,7 @@ public class RobotContainer {
   private final CommandXboxController operatorController = new CommandXboxController(1);
 
   private final Indexer indexer = new Indexer();
+  private final Intake intake = new Intake();
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -39,6 +42,7 @@ public class RobotContainer {
     configureBindings();
 
     indexer.setDefaultCommand(new IndexerXboxController(indexer, operatorController));
+    intake.setDefaultCommand(new IntakeXboxController(intake, operatorController));
   }
 
   /**
@@ -58,6 +62,7 @@ public class RobotContainer {
   private void configureBindings() {
 
   }
+  
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
